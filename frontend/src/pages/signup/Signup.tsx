@@ -12,7 +12,7 @@ export default function SignupPage() {
 
   const [passwordError, setPasswordError] = useState('');
 
-  const handleChange = (e) => {
+  const handleChange = (e: { target: { name: any; value: any; type: any; checked: any; }; }) => {
     const { name, value, type, checked } = e.target;
     setFormData(prevData => ({
       ...prevData,
@@ -37,16 +37,32 @@ export default function SignupPage() {
     return true;
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  try {
+    const response = await fetch('http://localhost:8000/api/token/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: formData.email,
+        password: formData.password
+      })
+    });
 
-    if (!validatePasswords()) {
-      return;
+    const data = await response.json();
+
+    if (response.ok) {
+      localStorage.setItem('access', data.access);
+      localStorage.setItem('refresh', data.refresh);
+      // Redirect or show success
+    } else {
+      alert(data.detail || 'Login failed');
     }
+  } catch (err) {
+    console.error('Login error', err);
+  }
+};
 
-    // Handle signup logic here
-    console.log('Signup form submitted with:', formData);
-  };
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col justify-center py-12 sm:px-6 lg:px-8">

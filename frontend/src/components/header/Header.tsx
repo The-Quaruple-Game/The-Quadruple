@@ -1,11 +1,25 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate  } from 'react-router-dom';
 
 export default function Header() {
+  const navigate = useNavigate();
+  
+  const isLoggedIn = !!localStorage.getItem('access');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+   const handleLogout = () => {
+    // ✅ Remove access token from localStorage
+    localStorage.removeItem('access_token');
+
+    // Optional: remove other user-related items
+    // localStorage.removeItem('user_profile');
+
+    // ✅ Redirect to login page
+    navigate('/signin');
   };
 
   return (
@@ -27,7 +41,10 @@ export default function Header() {
           </nav>
 
           {/* Auth Buttons */}
-          <div className="hidden md:flex items-center space-x-4">
+          {isLoggedIn ?(
+            <button onClick={handleLogout}></button>
+          ) : (
+<div className="hidden md:flex items-center space-x-4">
             <Link to="/signin">
             <button className="px-4 py-2 border border-white text-white rounded hover:bg-gray-700 transition-colors">
               Login
@@ -36,10 +53,11 @@ export default function Header() {
             <Link to="/signup">
             <button className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors">
               Register
-
             </button>
             </Link>
           </div>
+          )}
+             
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
@@ -68,7 +86,7 @@ export default function Header() {
               <a href="#" className="hover:text-blue-300 py-2">Contact</a>
             </div>
             <div className="flex flex-col space-y-2 pt-2 border-t border-gray-700">
-              <Link to="signin">
+              <Link to="/signin">
               <button className="px-4 py-2 border border-white text-white rounded hover:bg-gray-700 transition-colors">
                 Login
               </button>
