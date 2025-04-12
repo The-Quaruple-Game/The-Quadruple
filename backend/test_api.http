@@ -34,14 +34,17 @@ Content-Type: application/json
 
 
 
-# ### Get JWT Token (Login)
-# POST http://127.0.0.1:8000/api/token/
-# Content-Type: application/json
+### Get JWT Token (Login)
+POST http://127.0.0.1:8000/api/token/
+Content-Type: application/json
 
-# {
-#   "username": "Shuklaji",
-#   "password": "Shuklaji"
-# }
+{
+  "username": "Shuklaji",
+  "password": "Shuklaji"
+}
+
+###
+POST http://127.0.0.1:8000/api/logout/
 
 # ### Access a Protected Route
 # GET http://127.0.0.1:8000/api/your-protected-endpoint/

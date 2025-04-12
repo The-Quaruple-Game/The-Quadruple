@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from rest_framework import generics
+from rest_framework.views import APIView
 from django.contrib.auth.models import User
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
@@ -9,6 +10,14 @@ from .serializers import LevelSerializer, SubjectSerializer, UserProfileSerializ
 from .models import Level, Subject, UserProfile, Question, ClashMatch, ClashQuestion, Contact
 from api.models import Question    
 import random
+
+class LogoutView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request):
+        request.user.auth_token.delete()
+        return Response({"message": "Successfully logged out."})
+
 
 class ContactCreateView(generics.CreateAPIView):
     queryset = Contact.objects.all()
