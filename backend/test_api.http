@@ -1,0 +1,35 @@
+# i have created this file to check all of my http requests which i will be going to use during my project building
+
+# ### Get JWT Token (Login)
+# POST http://127.0.0.1:8000/api/token/
+# Content-Type: application/json
+
+# {
+#   "username": "Shuklaji",
+#   "password": "Shuklaji"
+# }
+
+# ### Access a Protected Route
+# GET http://127.0.0.1:8000/api/your-protected-endpoint/
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ0Mzk2MDY0LCJpYXQiOjE3NDQzOTU3NjQsImp0aSI6IjQ2ZjMxZGViMDNlOTRkYWU5YTc1ZGY3MjcxMTE3YTRhIiwidXNlcl9pZCI6MX0.ITB46bikwgWg1pFTLGBDCtz9Qy74XmCw87CiZEeBMxc
+
+
+# POST http://127.0.0.1:8000/api/register/
+# Content-Type: application/json
+
+# {
+#   "username": "Narendra",
+#   "email": "nandri@gmail.com",
+#   "password": "Narendra"
+# }
+
+# POST http://127.0.0.1:8000/api/register/
+# Content-Type: application/json
+
+# {
+#   "username": "testuser",
+#   "email": "test@example.com",
+#   "password": "testpassword123",
+#   "gender": "M",
+#   "dob": "2000-01-01"
+# }
