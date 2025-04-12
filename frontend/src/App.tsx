@@ -1,11 +1,10 @@
+import Routing from "./routing/Routing"
 
 
 function App() {
 
   return (
-    <>
-    hello
-    </>
+    <Routing/>
   )
 }
 
