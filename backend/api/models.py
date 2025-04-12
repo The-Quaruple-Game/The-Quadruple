@@ -2,6 +2,15 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
 
+class Contact(models.Model):
+    username = models.CharField(max_length=100)
+    email = models.EmailField()
+    description = models.TextField()
+    submitted_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.username} - {self.email}"
+
 class ClashMatch(models.Model):
     player1 = models.ForeignKey(User, on_delete=models.CASCADE, related_name="player1_matches")
     player2 = models.ForeignKey(User, on_delete=models.CASCADE, related_name="player2_matches")

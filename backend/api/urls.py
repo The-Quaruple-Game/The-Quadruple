@@ -3,7 +3,7 @@ from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
 )
-from .views import RegisterView, protected_view,  user_profile, get_levels, get_subjects, update_user_profile, register_user, start_clash
+from .views import RegisterView, protected_view,  user_profile, get_levels, get_subjects, update_user_profile, register_user, start_clash, ContactCreateView
 from . import views
 
 
@@ -21,4 +21,5 @@ urlpatterns = [
     path('quiz/submit/', views.submit_answer, name='submit'),
     path('start_clash/', start_clash, name='start_clash'),
     path('clash/submit/', views.submit_clash_answer, name='submit_clash_answer'),
+    path('contact/', ContactCreateView.as_view(), name='contact-create'),
 ]

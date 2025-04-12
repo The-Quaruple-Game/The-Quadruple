@@ -5,10 +5,14 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework import status
-from .serializers import LevelSerializer, SubjectSerializer, UserProfileSerializer, RegisterSerializer, UserSerializer
-from .models import Level, Subject, UserProfile, Question, ClashMatch, ClashQuestion
+from .serializers import LevelSerializer, SubjectSerializer, UserProfileSerializer, RegisterSerializer, UserSerializer, ContactSerializer
+from .models import Level, Subject, UserProfile, Question, ClashMatch, ClashQuestion, Contact
 from api.models import Question    
 import random
+
+class ContactCreateView(generics.CreateAPIView):
+    queryset = Contact.objects.all()
+    serializer_class = ContactSerializer
 
 @api_view(['POST'])
 def submit_clash_answer(request):
