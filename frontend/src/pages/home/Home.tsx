@@ -1,4 +1,8 @@
 import { useState } from 'react';
+<<<<<<< HEAD
+=======
+import image from "../../assets/image.png"
+>>>>>>> 85245aeb05c52bf229904b483c9dfaee59dd498a
 
 type Props = {}
 
@@ -92,6 +96,7 @@ const Home = (props: Props) => {
             {/* Hero Image */}
             <div className="w-full h-96 md:h-screen md:max-h-[600px] bg-gray-200 overflow-hidden">
               <img
+<<<<<<< HEAD
                 src="/api/placeholder/1200/600"
                 alt="Hero Image"
                 className="w-full h-full object-cover"
@@ -99,6 +104,15 @@ const Home = (props: Props) => {
               <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-purple-900/50 flex items-center">
                 <div className="container mx-auto px-6 md:px-12">
                   <div className="w-full md:w-2/3 text-white">
+=======
+               src={image}
+                alt="Hero Image"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute flex items-center justify-center">
+                <div className="container mx-auto px-6 md:px-12">
+                  <div className="w-full md:w-2/3 text-black">
+>>>>>>> 85245aeb05c52bf229904b483c9dfaee59dd498a
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
                       Transform Your Digital Experience
                     </h1>

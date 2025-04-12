@@ -4,10 +4,18 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Home from "../pages/home/Home"
 import Signup from "../pages/signup/Signup";
 import Signin from "../pages/signin/Signin";
+<<<<<<< HEAD
+=======
+import Contact from "../pages/contact/Contact";
+>>>>>>> 85245aeb05c52bf229904b483c9dfaee59dd498a
 
 // Components
 import Header from "../components/header/Header"
 import Footer from "../components/footer/Footer";
+<<<<<<< HEAD
+=======
+import Dashboard from "../pages/dashboard/Dashboard";
+>>>>>>> 85245aeb05c52bf229904b483c9dfaee59dd498a
 
 // Layout component that includes navigation and renders children
 function Layout() {
@@ -40,6 +48,17 @@ const router = createBrowserRouter([
         path: "signin",
         element: <Signin />,
       },
+<<<<<<< HEAD
+=======
+      {
+        path: "contact",
+        element: <Contact/>
+      },
+      {
+        path: "dashboard",
+        element: <Dashboard/>
+      }
+>>>>>>> 85245aeb05c52bf229904b483c9dfaee59dd498a
     ],
   },
 ]);
