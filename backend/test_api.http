@@ -59,17 +59,16 @@ Content-Type: application/json
 #   "subject": "math"
 # }
 
+###
+POST http://127.0.0.1:8000/api/register/
+Content-Type: application/json
 
-# POST http://127.0.0.1:8000/api/register/
-# Content-Type: application/json
-
-# {
-#   "username": "kik",
-#   "email": "nandrki@gmail.com",
-#   "password": "kik",
-#   "gender":"F",
-#   "dob":"2002-02-12"
-# }
+{
+  "username": "kiku",
+  "email": "kiku@gmail.com",
+  "password": "kiku",
+  "gender":"M"
+}
 
 # POST http://127.0.0.1:8000/api/register/
 # Content-Type: application/json

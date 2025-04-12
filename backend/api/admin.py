@@ -28,7 +28,7 @@ class ClashQuestionAdmin(admin.ModelAdmin):
 
 @admin.register(UserProfile)
 class UserProfileAdmin(admin.ModelAdmin):
-    list_display = ('user', 'gender', 'dob', 'level', 'subject')
+    list_display = ('user', 'gender', 'level', 'subject')
 
 @admin.register(Question)
 class QuestionAdmin(admin.ModelAdmin):

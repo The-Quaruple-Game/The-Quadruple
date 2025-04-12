@@ -38,7 +38,7 @@ class UserProfileSerializer(serializers.ModelSerializer):
 class RegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
     gender = serializers.ChoiceField(choices=UserProfile.GENDER_CHOICES)
-    dob = serializers.DateField()
+
 
     class Meta:
         model = User
@@ -46,7 +46,6 @@ class RegisterSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         gender = validated_data.pop('gender')
-        dob = validated_data.pop('dob')
 
         user = User.objects.create_user(
             username=validated_data['username'],
@@ -54,7 +53,7 @@ class RegisterSerializer(serializers.ModelSerializer):
             password=validated_data['password']
         )
 
-        UserProfile.objects.create(user=user, gender=gender, dob=dob)
+        UserProfile.objects.create(user=user, gender=gender)
         return user
 
 

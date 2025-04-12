@@ -52,7 +52,6 @@ class UserProfile(models.Model):
 
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
-    dob = models.DateField()
     # added after words 
     level = models.ForeignKey(Level, on_delete=models.SET_NULL, null=True, blank=True)
     subject = models.ForeignKey(Subject, on_delete=models.SET_NULL, null=True, blank=True)
