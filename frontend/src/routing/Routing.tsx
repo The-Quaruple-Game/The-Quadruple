@@ -4,10 +4,12 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Home from "../pages/home/Home"
 import Signup from "../pages/signup/Signup";
 import Signin from "../pages/signin/Signin";
+import Contact from "../pages/contact/Contact";
 
 // Components
 import Header from "../components/header/Header"
 import Footer from "../components/footer/Footer";
+import Dashboard from "../pages/dashboard/Dashboard";
 
 // Layout component that includes navigation and renders children
 function Layout() {
@@ -40,6 +42,14 @@ const router = createBrowserRouter([
         path: "signin",
         element: <Signin />,
       },
+      {
+        path: "contact",
+        element: <Contact/>
+      },
+      {
+        path: "dashboard",
+        element: <Dashboard/>
+      }
     ],
   },
 ]);

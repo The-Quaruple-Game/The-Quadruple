@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Header() {
+  const BrandName = "SkillRush";
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -15,7 +16,7 @@ export default function Header() {
           {/* Logo */}
           <Link to="/">
 
-          <div className="text-xl font-bold">Brand Logo</div>
+          <div className="text-xl font-bold">{BrandName}</div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -65,7 +66,7 @@ export default function Header() {
               <Link to="/" className="hover:text-blue-300 py-2">Home</Link>
               <a href="#" className="hover:text-blue-300 py-2">About</a>
               <a href="#" className="hover:text-blue-300 py-2">Services</a>
-              <a href="#" className="hover:text-blue-300 py-2">Contact</a>
+              <a href="/contact" className="hover:text-blue-300 py-2">Contact</a>
             </div>
             <div className="flex flex-col space-y-2 pt-2 border-t border-gray-700">
               <Link to="signin">
