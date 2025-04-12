@@ -12,7 +12,7 @@ urlpatterns = [
     path('register/', RegisterView.as_view(), name='register'),
     path('protected/', protected_view, name='protected'),
     path('profile/', user_profile),
-     path('levels/', get_levels, name='get_levels'),
+    path('levels/', get_levels, name='get_levels'),
     path('subjects/', get_subjects, name='get_subjects'),
     path('update-profile/', update_user_profile, name='update_user_profile'),
 ]
