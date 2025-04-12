@@ -25,12 +25,13 @@ class UserProfileSerializer(serializers.ModelSerializer):
 
 class RegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
-    gender = serializers.ChoiceField(choices=UserProfile.GENDER_CHOICES)
-    dob = serializers.DateField()
+    gender = serializers.ChoiceField(choices=UserProfile.GENDER_CHOICES,write_only=True)
+    dob = serializers.DateField(write_only=True)
 
     class Meta:
         model = User
         fields = ['username', 'email', 'password', 'gender', 'dob']
+        extra_kwargs = {'password': {'write_only': True}}
 
     def create(self, validated_data):
         gender = validated_data.pop('gender')
@@ -44,6 +45,19 @@ class RegisterSerializer(serializers.ModelSerializer):
 
         UserProfile.objects.create(user=user, gender=gender, dob=dob)
         return user
+    
+    def to_representation(self, instance):
+            """
+            Custom representation after creating the user — show user + profile data
+            """
+            profile = UserProfile.objects.get(user=instance)
+            return {
+                'id': instance.id,
+                'username': instance.username,
+                'email': instance.email,
+                'gender': profile.gender,
+                'dob': profile.dob,
+            }
 
 
 

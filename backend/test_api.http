@@ -1,12 +1,12 @@
 # i have created this file to check all of my http requests which i will be going to use during my project building
 
-# ### Get JWT Token (Login)
+### Get JWT Token (Login)
 # POST http://127.0.0.1:8000/api/token/
 # Content-Type: application/json
 
 # {
-#   "username": "Shuklaji",
-#   "password": "Shuklaji"
+#   "username": "riya",
+#   "password": "riya@123"
 # }
 
 # ### Access a Protected Route
@@ -27,9 +27,30 @@
 # Content-Type: application/json
 
 # {
-#   "username": "testuser",
-#   "email": "test@example.com",
-#   "password": "testpassword123",
+#   "username": "shivam1223",
+#   "email": "shivam1@example.com",
+#   "password": "shivu",
 #   "gender": "M",
-#   "dob": "2000-01-01"
+#   "dob": "2001-01-01"
 # }
+
+
+# GET http://localhost:8000/api/subjects/
+
+# [
+#   { "id": 1, "name": "Beginner" },
+#   { "id": 2, "name": "Intermediate" }
+# ]
+
+# GET http://localhost:8000/api/levels/
+# [
+#   { "id": 1, "name": "Beginner" },
+#   { "id": 2, "name": "Intermediate" }
+# ]
+
+POST http://localhost:8000/api/update-profile/
+
+{
+  "level": 1,
+  "subject": 2
+}
