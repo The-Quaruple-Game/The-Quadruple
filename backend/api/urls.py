@@ -3,7 +3,8 @@ from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
 )
-from .views import RegisterView, protected_view,  user_profile, get_levels, get_subjects, update_user_profile, register_user
+from .views import RegisterView, protected_view,  user_profile, get_levels, get_subjects, update_user_profile, register_user, start_clash
+from . import views
 
 
 urlpatterns = [
@@ -15,5 +16,9 @@ urlpatterns = [
     path('levels/', get_levels, name='get_levels'),
     path('subjects/', get_subjects, name='get_subjects'),
     path('update-profile/', update_user_profile, name='update_user_profile'),
-    path('register/', register_user, name='register')
+    path('register/', register_user, name='register'),
+    path('quiz/question/', views.get_question, name='question'),
+    path('quiz/submit/', views.submit_answer, name='submit'),
+    path('start_clash/', start_clash, name='start_clash'),
+    path('clash/submit/', views.submit_clash_answer, name='submit_clash_answer'),
 ]

@@ -1,5 +1,24 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils import timezone
+
+class ClashMatch(models.Model):
+    player1 = models.ForeignKey(User, on_delete=models.CASCADE, related_name="player1_matches")
+    player2 = models.ForeignKey(User, on_delete=models.CASCADE, related_name="player2_matches")
+    level = models.IntegerField()
+    subject = models.CharField(max_length=100)
+    created_at = models.DateTimeField(default=timezone.now)
+    is_active = models.BooleanField(default=True)
+    player1_score = models.IntegerField(default=0)
+    player2_score = models.IntegerField(default=0)
+
+class ClashQuestion(models.Model):
+    match = models.ForeignKey(ClashMatch, on_delete=models.CASCADE, related_name="questions")
+    question = models.ForeignKey("Question", on_delete=models.CASCADE)
+    player1_answer = models.CharField(max_length=1, blank=True, null=True)
+    player2_answer = models.CharField(max_length=1, blank=True, null=True)
+    correct_option = models.CharField(max_length=1)
+
 
 # Level model
 class Level(models.Model):
@@ -31,3 +50,24 @@ class UserProfile(models.Model):
     
     def __str__(self):
         return self.user.username
+    
+# for game 
+
+class Question(models.Model):
+    SUBJECT_CHOICES = [
+        ('math', 'Math'),
+        ('science', 'Science'),
+        ('gk', 'General Knowledge'),
+        ('cs', 'Computer Science'),
+        # Add more if needed
+    ]
+
+    level = models.IntegerField()
+    subject = models.CharField(max_length=50, choices=SUBJECT_CHOICES)
+    question_text = models.TextField()
+    options = models.JSONField()  # A, B, C, D
+    correct_option = models.CharField(max_length=1)  # 'A', 'B', etc.
+    solution = models.TextField()  # Detailed explanation
+
+    def __str__(self):
+        return f"{self.subject} | L{self.level} | {self.question_text[:30]}"

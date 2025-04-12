@@ -1,5 +1,28 @@
 # i have created this file to check all of my http requests which i will be going to use during my project building
 
+### Get a Token
+POST http://127.0.0.1:8000/api/token/
+Content-Type: application/json
+
+{
+  "username": "Shuklaji",
+  "password": "Shuklaji"
+}
+
+### Submit Clash Answer
+POST http://127.0.0.1:8000/api/clash/submit/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ0NDgzNjgzLCJpYXQiOjE3NDQ0ODAwODMsImp0aSI6IjMwODNkZGRkMTU4NDQ0ZGM4YjVmMWU0OTk5ZmVmZjZhIiwidXNlcl9pZCI6MX0.rLXU_WyFvFcZH96B2OPu6Rm2P65hL277BgEeqOUUzG0
+
+{
+  "match_id": 1,
+  "player_id": 1,
+  "question_id": 12,
+  "selected_option": "C"
+}
+
+
+
 # ### Get JWT Token (Login)
 # POST http://127.0.0.1:8000/api/token/
 # Content-Type: application/json
@@ -14,16 +37,28 @@
 # Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ0Mzk2MDY0LCJpYXQiOjE3NDQzOTU3NjQsImp0aSI6IjQ2ZjMxZGViMDNlOTRkYWU5YTc1ZGY3MjcxMTE3YTRhIiwidXNlcl9pZCI6MX0.ITB46bikwgWg1pFTLGBDCtz9Qy74XmCw87CiZEeBMxc
 
 
-POST http://127.0.0.1:8000/api/register/
-Content-Type: application/json
+# this one is to check my clash game 
+# POST http://127.0.0.1:8000/api/start_clash/
+# Content-Type: application/json
 
-{
-  "username": "kik",
-  "email": "nandrki@gmail.com",
-  "password": "kik",
-  "gender":"F",
-  "dob":"2002-02-12"
-}
+# {
+#   "player1_id": 1,
+#   "player2_id": 2,
+#   "level": 2,
+#   "subject": "math"
+# }
+
+
+# POST http://127.0.0.1:8000/api/register/
+# Content-Type: application/json
+
+# {
+#   "username": "kik",
+#   "email": "nandrki@gmail.com",
+#   "password": "kik",
+#   "gender":"F",
+#   "dob":"2002-02-12"
+# }
 
 # POST http://127.0.0.1:8000/api/register/
 # Content-Type: application/json
