@@ -76,3 +76,6 @@ A learning platform that incorporates game elements to motivate and engage stude
 
 ## Project Status
 Developed for HAckverse - April 2025
+=======
+added branches
+main
