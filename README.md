@@ -70,10 +70,9 @@ A learning platform that incorporates game elements to motivate and engage stude
 - Marketplace for redeeming earned points
 
 ## Hackathon Team
-- [Team Member 1] - [Role]
-- [Team Member 2] - [Role]
-- [Team Member 3] - [Role]
-- [Team Member 4] - [Role]
+- Shivam Kumar SHukla (Leader) - Backend (Django, JWT, Rest API)
+- Nerandra Samtani - Frontend (React.js, Vite, Tailwind CSS)
+- Riya Tanoj Mhatre - UI, DataBase, README.md, PPT
 
 ## Project Status
-Developed for [Hackathon Name] - April 2025
+Developed for HAckverse - April 2025
