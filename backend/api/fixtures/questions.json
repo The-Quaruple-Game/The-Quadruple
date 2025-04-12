@@ -1,0 +1,546 @@
+[
+    {
+        "model": "api.question",
+        "fields": {
+            "level": 1,
+            "subject": "math",
+            "question_text": "What is 2 + 2?",
+            "options": {
+                "A": "3",
+                "B": "4",
+                "C": "5",
+                "D": "6"
+            },
+            "correct_option": "B",
+            "solution": "2 + 2 = 4 because it's basic arithmetic."
+        }
+    },
+    {
+        "model": "api.question",
+        "fields": {
+            "level": 1,
+            "subject": "math",
+            "question_text": "What is 5 * 6?",
+            "options": {
+                "A": "30",
+                "B": "36",
+                "C": "26",
+                "D": "40"
+            },
+            "correct_option": "A",
+            "solution": "5 times 6 equals 30."
+        }
+    },
+    {
+        "model": "api.question",
+        "fields": {
+            "level": 2,
+            "subject": "science",
+            "question_text": "What is H2O?",
+            "options": {
+                "A": "Hydrogen",
+                "B": "Oxygen",
+                "C": "Water",
+                "D": "Carbon Dioxide"
+            },
+            "correct_option": "C",
+            "solution": "H2O is the chemical formula for water."
+        }
+    },
+    {
+        "model": "api.question",
+        "fields": {
+            "level": 3,
+            "subject": "gk",
+            "question_text": "Who is the President of India (2024)?",
+            "options": {
+                "A": "Droupadi Murmu",
+                "B": "Narendra Modi",
+                "C": "Rahul Gandhi",
+                "D": "Amit Shah"
+            },
+            "correct_option": "A",
+            "solution": "Droupadi Murmu is the President of India since 2022."
+        }
+    },
+    {
+        "model": "api.question",
+        "fields": {
+            "level": 1,
+            "subject": "math",
+            "question_text": "What is 2 + 3?",
+            "options": {
+                "A": "6",
+                "B": "4",
+                "C": "5",
+                "D": "3"
+            },
+            "correct_option": "C",
+            "solution": "2 plus 3 equals 5."
+        }
+    },
+    {
+        "model": "api.question",
+        "fields": {
+            "level": 1,
+            "subject": "math",
+            "question_text": "What is 9 - 4?",
+            "options": {
+                "A": "5",
+                "B": "6",
+                "C": "4",
+                "D": "3"
+            },
+            "correct_option": "A",
+            "solution": "9 minus 4 equals 5."
+        }
+    },
+    {
+        "model": "api.question",
+        "fields": {
+            "level": 1,
+            "subject": "math",
+            "question_text": "What is 3 * 4?",
+            "options": {
+                "A": "7",
+                "B": "12",
+                "C": "14",
+                "D": "10"
+            },
+            "correct_option": "B",
+            "solution": "3 times 4 equals 12."
+        }
+    },
+    {
+        "model": "api.question",
+        "fields": {
+            "level": 1,
+            "subject": "math",
+            "question_text": "What is 8 / 2?",
+            "options": {
+                "A": "6",
+                "B": "2",
+                "C": "4",
+                "D": "8"
+            },
+            "correct_option": "C",
+            "solution": "8 divided by 2 equals 4."
+        }
+    },
+    {
+        "model": "api.question",
+        "fields": {
+            "level": 1,
+            "subject": "math",
+            "question_text": "What is 7 + 6?",
+            "options": {
+                "A": "12",
+                "B": "13",
+                "C": "14",
+                "D": "15"
+            },
+            "correct_option": "B",
+            "solution": "7 plus 6 equals 13."
+        }
+    },
+    {
+        "model": "api.question",
+        "fields": {
+            "level": 1,
+            "subject": "math",
+            "question_text": "What is 10 - 7?",
+            "options": {
+                "A": "2",
+                "B": "4",
+                "C": "3",
+                "D": "1"
+            },
+            "correct_option": "C",
+            "solution": "10 minus 7 equals 3."
+        }
+    },
+    {
+        "model": "api.question",
+        "fields": {
+            "level": 1,
+            "subject": "math",
+            "question_text": "What is 6 * 1?",
+            "options": {
+                "A": "6",
+                "B": "1",
+                "C": "0",
+                "D": "7"
+            },
+            "correct_option": "A",
+            "solution": "6 times 1 equals 6."
+        }
+    },
+    {
+        "model": "api.question",
+        "fields": {
+            "level": 1,
+            "subject": "math",
+            "question_text": "What is 4 + 4?",
+            "options": {
+                "A": "8",
+                "B": "6",
+                "C": "9",
+                "D": "7"
+            },
+            "correct_option": "A",
+            "solution": "4 plus 4 equals 8."
+        }
+    },
+    {
+        "model": "api.question",
+        "fields": {
+            "level": 1,
+            "subject": "math",
+            "question_text": "What is 12 - 5?",
+            "options": {
+                "A": "6",
+                "B": "5",
+                "C": "7",
+                "D": "8"
+            },
+            "correct_option": "C",
+            "solution": "12 minus 5 equals 7."
+        }
+    },
+    {
+        "model": "api.question",
+        "fields": {
+            "level": 1,
+            "subject": "math",
+            "question_text": "What is 5 * 6?",
+            "options": {
+                "A": "30",
+                "B": "36",
+                "C": "26",
+                "D": "40"
+            },
+            "correct_option": "A",
+            "solution": "5 times 6 equals 30."
+        }
+    },
+    {
+        "model": "api.question",
+        "fields": {
+            "level": 2,
+            "subject": "math",
+            "question_text": "What is 3 + 6 * 2?",
+            "options": {
+                "A": "18",
+                "B": "15",
+                "C": "12",
+                "D": "9"
+            },
+            "correct_option": "B",
+            "solution": "Follow order of operations: 6*2 = 12, then 3 + 12 = 15."
+        }
+    },
+    {
+        "model": "api.question",
+        "fields": {
+            "level": 2,
+            "subject": "math",
+            "question_text": "What is 1/2 + 1/4?",
+            "options": {
+                "A": "3/4",
+                "B": "2/4",
+                "C": "1/2",
+                "D": "5/4"
+            },
+            "correct_option": "A",
+            "solution": "1/2 is 2/4, so 2/4 + 1/4 = 3/4."
+        }
+    },
+    {
+        "model": "api.question",
+        "fields": {
+            "level": 2,
+            "subject": "math",
+            "question_text": "What is 5 squared?",
+            "options": {
+                "A": "10",
+                "B": "20",
+                "C": "25",
+                "D": "15"
+            },
+            "correct_option": "C",
+            "solution": "5 squared means 5 * 5 = 25."
+        }
+    },
+    {
+        "model": "api.question",
+        "fields": {
+            "level": 2,
+            "subject": "math",
+            "question_text": "What is the value of (8 - 3) * 2?",
+            "options": {
+                "A": "10",
+                "B": "8",
+                "C": "6",
+                "D": "12"
+            },
+            "correct_option": "A",
+            "solution": "(8 - 3) = 5, then 5 * 2 = 10."
+        }
+    },
+    {
+        "model": "api.question",
+        "fields": {
+            "level": 2,
+            "subject": "math",
+            "question_text": "What is 100 / 5?",
+            "options": {
+                "A": "25",
+                "B": "20",
+                "C": "15",
+                "D": "10"
+            },
+            "correct_option": "B",
+            "solution": "100 divided by 5 equals 20."
+        }
+    },
+    {
+        "model": "api.question",
+        "fields": {
+            "level": 2,
+            "subject": "math",
+            "question_text": "What is 9^2?",
+            "options": {
+                "A": "81",
+                "B": "72",
+                "C": "27",
+                "D": "18"
+            },
+            "correct_option": "A",
+            "solution": "9 squared is 9 * 9 = 81."
+        }
+    },
+    {
+        "model": "api.question",
+        "fields": {
+            "level": 2,
+            "subject": "math",
+            "question_text": "What is 20% of 50?",
+            "options": {
+                "A": "10",
+                "B": "15",
+                "C": "20",
+                "D": "5"
+            },
+            "correct_option": "A",
+            "solution": "20% of 50 = (20/100)*50 = 10."
+        }
+    },
+    {
+        "model": "api.question",
+        "fields": {
+            "level": 2,
+            "subject": "math",
+            "question_text": "Which is greater: 0.7 or 2/3?",
+            "options": {
+                "A": "0.7",
+                "B": "2/3",
+                "C": "Equal",
+                "D": "Cannot say"
+            },
+            "correct_option": "A",
+            "solution": "2/3 ≈ 0.666. So 0.7 is greater."
+        }
+    },
+    {
+        "model": "api.question",
+        "fields": {
+            "level": 2,
+            "subject": "math",
+            "question_text": "What is the LCM of 4 and 6?",
+            "options": {
+                "A": "12",
+                "B": "24",
+                "C": "6",
+                "D": "8"
+            },
+            "correct_option": "A",
+            "solution": "LCM of 4 and 6 is 12."
+        }
+    },
+    {
+        "model": "api.question",
+        "fields": {
+            "level": 2,
+            "subject": "math",
+            "question_text": "What is the average of 3, 7, and 10?",
+            "options": {
+                "A": "6",
+                "B": "7",
+                "C": "8",
+                "D": "10"
+            },
+            "correct_option": "B",
+            "solution": "(3 + 7 + 10)/3 = 20/3 ≈ 6.67, so rounded average is 7."
+        }
+    },
+    {
+        "model": "api.question",
+        "fields": {
+            "level": 3,
+            "subject": "math",
+            "question_text": "Solve for x: 2x + 5 = 13",
+            "options": {
+                "A": "3",
+                "B": "4",
+                "C": "6",
+                "D": "5"
+            },
+            "correct_option": "B",
+            "solution": "2x = 8, so x = 4."
+        }
+    },
+    {
+        "model": "api.question",
+        "fields": {
+            "level": 3,
+            "subject": "math",
+            "question_text": "What is the area of a circle with radius 3?",
+            "options": {
+                "A": "9π",
+                "B": "6π",
+                "C": "3π",
+                "D": "18π"
+            },
+            "correct_option": "A",
+            "solution": "Area = πr² = π(3²) = 9π."
+        }
+    },
+    {
+        "model": "api.question",
+        "fields": {
+            "level": 3,
+            "subject": "math",
+            "question_text": "What is the derivative of x^2?",
+            "options": {
+                "A": "2x",
+                "B": "x",
+                "C": "x^2",
+                "D": "0"
+            },
+            "correct_option": "A",
+            "solution": "d/dx of x² is 2x."
+        }
+    },
+    {
+        "model": "api.question",
+        "fields": {
+            "level": 3,
+            "subject": "math",
+            "question_text": "If f(x) = 2x + 1, what is f(3)?",
+            "options": {
+                "A": "7",
+                "B": "6",
+                "C": "8",
+                "D": "5"
+            },
+            "correct_option": "A",
+            "solution": "f(3) = 2*3 + 1 = 7."
+        }
+    },
+    {
+        "model": "api.question",
+        "fields": {
+            "level": 3,
+            "subject": "math",
+            "question_text": "Solve: x^2 - 4 = 0",
+            "options": {
+                "A": "x=2",
+                "B": "x=-2",
+                "C": "x=±2",
+                "D": "x=4"
+            },
+            "correct_option": "C",
+            "solution": "x² - 4 = 0 → x = ±2."
+        }
+    },
+    {
+        "model": "api.question",
+        "fields": {
+            "level": 3,
+            "subject": "math",
+            "question_text": "What is the slope of the line y = 3x - 7?",
+            "options": {
+                "A": "3",
+                "B": "-7",
+                "C": "7",
+                "D": "0"
+            },
+            "correct_option": "A",
+            "solution": "Slope is the coefficient of x, which is 3."
+        }
+    },
+    {
+        "model": "api.question",
+        "fields": {
+            "level": 3,
+            "subject": "math",
+            "question_text": "A train travels 60 km in 1.5 hours. What is its speed?",
+            "options": {
+                "A": "40 km/h",
+                "B": "45 km/h",
+                "C": "50 km/h",
+                "D": "60 km/h"
+            },
+            "correct_option": "B",
+            "solution": "Speed = distance/time = 60/1.5 = 40."
+        }
+    },
+    {
+        "model": "api.question",
+        "fields": {
+            "level": 3,
+            "subject": "math",
+            "question_text": "Factor: x^2 - 9",
+            "options": {
+                "A": "(x+3)(x-3)",
+                "B": "(x+9)(x-1)",
+                "C": "x(x-9)",
+                "D": "(x-3)^2"
+            },
+            "correct_option": "A",
+            "solution": "This is a difference of squares: x² - 9 = (x+3)(x-3)."
+        }
+    },
+    {
+        "model": "api.question",
+        "fields": {
+            "level": 3,
+            "subject": "math",
+            "question_text": "If the perimeter of a square is 20 cm, what is one side?",
+            "options": {
+                "A": "4 cm",
+                "B": "5 cm",
+                "C": "6 cm",
+                "D": "10 cm"
+            },
+            "correct_option": "B",
+            "solution": "Perimeter = 4 × side → side = 20/4 = 5 cm."
+        }
+    },
+    {
+        "model": "api.question",
+        "fields": {
+            "level": 3,
+            "subject": "math",
+            "question_text": "Simplify: (x^3)(x^2)",
+            "options": {
+                "A": "x^5",
+                "B": "x^6",
+                "C": "x^3",
+                "D": "x^1"
+            },
+            "correct_option": "A",
+            "solution": "Add exponents: x³·x² = x⁵."
+        }
+    }
+]

@@ -1,6 +1,18 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
-from .models import UserProfile, Level, Subject
+from .models import UserProfile, Level, Subject, Contact
+# for contact form
+class ContactSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Contact
+        fields = '__all__'
+
+
+# Serializer for User
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['id', 'username', 'email']
 
 # Serializer for Level
 class LevelSerializer(serializers.ModelSerializer):
@@ -26,7 +38,7 @@ class UserProfileSerializer(serializers.ModelSerializer):
 class RegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
     gender = serializers.ChoiceField(choices=UserProfile.GENDER_CHOICES)
-    dob = serializers.DateField()
+
 
     class Meta:
         model = User
@@ -34,7 +46,6 @@ class RegisterSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         gender = validated_data.pop('gender')
-        dob = validated_data.pop('dob')
 
         user = User.objects.create_user(
             username=validated_data['username'],
@@ -42,7 +53,7 @@ class RegisterSerializer(serializers.ModelSerializer):
             password=validated_data['password']
         )
 
-        UserProfile.objects.create(user=user, gender=gender, dob=dob)
+        UserProfile.objects.create(user=user, gender=gender)
         return user
 
 
