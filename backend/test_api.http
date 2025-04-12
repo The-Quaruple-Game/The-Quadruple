@@ -14,14 +14,16 @@
 # Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ0Mzk2MDY0LCJpYXQiOjE3NDQzOTU3NjQsImp0aSI6IjQ2ZjMxZGViMDNlOTRkYWU5YTc1ZGY3MjcxMTE3YTRhIiwidXNlcl9pZCI6MX0.ITB46bikwgWg1pFTLGBDCtz9Qy74XmCw87CiZEeBMxc
 
 
-# POST http://127.0.0.1:8000/api/register/
-# Content-Type: application/json
+POST http://127.0.0.1:8000/api/register/
+Content-Type: application/json
 
-# {
-#   "username": "Narendra",
-#   "email": "nandri@gmail.com",
-#   "password": "Narendra"
-# }
+{
+  "username": "kik",
+  "email": "nandrki@gmail.com",
+  "password": "kik",
+  "gender":"F",
+  "dob":"2002-02-12"
+}
 
 # POST http://127.0.0.1:8000/api/register/
 # Content-Type: application/json

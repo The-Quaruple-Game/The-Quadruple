@@ -1,19 +1,34 @@
-import { useState } from 'react';
+import { useState, FormEvent, ChangeEvent } from 'react';
 import { Link } from 'react-router-dom';
 
-export default function SignupPage() {
-  const [formData, setFormData] = useState({
+// Define interfaces for form data and props
+interface FormData {
+  username: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+  gender: string;
+  dob: string;
+  agreeToTerms: boolean;
+}
+
+export default function SignupPage(){
+  const [formData, setFormData] = useState<FormData>({
     username: '',
     email: '',
     password: '',
     confirmPassword: '',
+    gender: '',
+    dob: '',
     agreeToTerms: false
   });
 
-  const [passwordError, setPasswordError] = useState('');
+  const [passwordError, setPasswordError] = useState<string>('');
 
-  const handleChange = (e: { target: { name: any; value: any; type: any; checked: any; }; }) => {
-    const { name, value, type, checked } = e.target;
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>): void => {
+    const { name, value, type } = e.target;
+    const checked = (e.target as HTMLInputElement).checked;
+    
     setFormData(prevData => ({
       ...prevData,
       [name]: type === 'checkbox' ? checked : value
@@ -25,7 +40,7 @@ export default function SignupPage() {
     }
   };
 
-  const validatePasswords = () => {
+  const validatePasswords = (): boolean => {
     if (formData.password !== formData.confirmPassword) {
       setPasswordError("Passwords don't match");
       return false;
@@ -37,32 +52,71 @@ export default function SignupPage() {
     return true;
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
+    e.preventDefault();
+    
+    if (!validatePasswords()) {
+      return;
+    }
+
+      // Format DOB to yyyy-mm-dd
+  const dob = new Date(formData.dob);
+  const formattedDob = dob.toISOString().split('T')[0]; // 'yyyy-mm-dd'
+
+  const payload = {
+    username: formData.username,
+    email: formData.email,
+    password: formData.password,
+    confirmPassword: formData.confirmPassword,
+    gender: formData.gender,
+    dob: formattedDob,
+    agreeToTerms: formData.agreeToTerms
+  };
+
+  console.log("Sending payload:", payload);
+
   try {
-    const response = await fetch('http://localhost:8000/api/token/', {
+    const response = await fetch('http://localhost:8000/api/register/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        email: formData.email,
-        password: formData.password
-      })
+      body: JSON.stringify(payload)
     });
 
     const data = await response.json();
 
     if (response.ok) {
-      localStorage.setItem('access', data.access);
-      localStorage.setItem('refresh', data.refresh);
-      // Redirect or show success
+      alert('Account created successfully!');
+      // Optionally redirect
     } else {
-      alert(data.detail || 'Login failed');
+      alert(data.detail || 'Signup failed');
     }
   } catch (err) {
-    console.error('Login error', err);
+    console.error('Signup error', err);
   }
-};
+    
+    try {
+      const response = await fetch('http://localhost:8000/api/token/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: formData.email,
+          password: formData.password
+        })
+      });
 
+      const data = await response.json();
+
+      if (response.ok) {
+        localStorage.setItem('access', data.access);
+        localStorage.setItem('refresh', data.refresh);
+        // Redirect or show success
+      } else {
+        alert(data.detail || 'Login failed');
+      }
+    } catch (err) {
+      console.error('Login error', err);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
@@ -157,6 +211,42 @@ export default function SignupPage() {
               {passwordError && (
                 <p className="mt-1 text-xs text-red-600">{passwordError}</p>
               )}
+            </div>
+
+            {/* Gender selection */}
+            <div>
+              <label htmlFor="gender" className="block text-sm font-medium text-gray-700">
+                Gender
+              </label>
+              <select
+                id="gender"
+                name="gender"
+                required
+                value={formData.gender}
+                onChange={handleChange}
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              >
+                <option value="">Select gender</option>
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+                <option value="O">Other</option>
+              </select>
+            </div>
+
+            {/* Date of birth */}
+            <div>
+              <label htmlFor="dob" className="block text-sm font-medium text-gray-700">
+                Date of Birth
+              </label>
+              <input
+                id="dob"
+                name="dob"
+                type="date"
+                required
+                value={formData.dob}
+                onChange={handleChange}
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              />
             </div>
 
             <div className="flex items-center">
