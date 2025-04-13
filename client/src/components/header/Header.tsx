@@ -3,6 +3,7 @@ import homelogo from "../../assets/mlogo.svg"
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navmenu from "@/components/navitems/Navmenu";
+import { NavbarDemo } from "../navbardemo/NavBarDemo";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -22,6 +23,7 @@ const Header = () => {
 
         {/* Desktop Navigation */}
        <Navmenu/>
+       {/* <NavbarDemo/> */}
 
         {/* Auth Buttons */}
         <div className="hidden md:flex items-center space-x-4">
