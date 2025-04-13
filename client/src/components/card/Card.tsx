@@ -14,7 +14,7 @@ type CardProps = {
           <h2 className="card-title">{title}</h2>
           <p>{description}</p>
           <div className="card-actions justify-end">
-            <button className="btn btn-primary">Buy Now</button>
+            <button className="btn btn-primary">Start Now</button>
           </div>
         </div>
       </div>

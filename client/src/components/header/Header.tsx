@@ -3,7 +3,6 @@ import homelogo from "../../assets/mlogo.svg"
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navmenu from "@/components/navitems/Navmenu";
-import { NavbarDemo } from "../navbardemo/NavBarDemo";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -61,10 +60,9 @@ const Header = () => {
       {isMobileMenuOpen && (
         <div className="md:hidden mt-3 pb-3 space-y-3">
           <div className="flex flex-col space-y-2">
-            <a href="#" className="hover:text-blue-300 py-2">Home</a>
-            <a href="#" className="hover:text-blue-300 py-2">About</a>
-            <a href="#" className="hover:text-blue-300 py-2">Services</a>
-            <a href="#" className="hover:text-blue-300 py-2">Contact</a>
+            <Link to="#" className="hover:text-blue-300 py-2">About</Link>
+            <Link to="#" className="hover:text-blue-300 py-2">Services</Link>
+            <Link to="#" className="hover:text-blue-300 py-2">Contact</Link>
           </div>
           <div className="flex flex-col space-y-2 pt-2 border-t border-gray-700">
             <button className="px-4 py-2 border border-white text-white rounded hover:bg-gray-700 transition-colors">
