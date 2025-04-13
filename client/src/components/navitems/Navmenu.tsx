@@ -16,43 +16,44 @@ import {
 
 const components = [
   {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
-    description: "A modal dialog that interrupts the user with important content and expects a response.",
+    title: "FlavorCraft",
+    href: "/projects/flavorcraft",
+    description: "A recipe search platform built using HTML, CSS, and JavaScript with responsive UI and API integration.",
   },
   {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
-    description: "For sighted users to preview content available behind a link.",
+    title: "TaskMaster",
+    href: "/projects/taskmaster",
+    description: "A task management app built with React and Firebase to help teams stay organized and productive.",
   },
   {
-    title: "Progress",
-    href: "/docs/primitives/progress",
-    description: "Displays a progress bar indicating the completion of a task.",
+    title: "HealthMate",
+    href: "/projects/healthmate",
+    description: "A fitness tracker app that allows users to log workouts and monitor health metrics in real-time.",
   },
   {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
+    title: "EduPath",
+    href: "/projects/edupath",
+    description: "An e-learning platform offering curated content and quizzes to enhance self-paced learning.",
   },
   {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
-    description: "Layered content sections that are displayed one at a time.",
+    title: "ArtHub",
+    href: "/projects/arthub",
+    description: "A digital art marketplace showcasing unique pieces and allowing artists to sell their work online.",
   },
   {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
-    description: "A popup showing additional info when hovering or focusing an element.",
+    title: "DevLink",
+    href: "/projects/devlink",
+    description: "A developer portfolio and blogging site built with Next.js, featuring markdown support and live previews.",
   },
-]
+];
+
 
 export default function NavigationMenuDemo() {
   return (
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
+          <NavigationMenuTrigger>Learning</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
@@ -63,29 +64,30 @@ export default function NavigationMenuDemo() {
                   >
                     <Icons.logo className="h-6 w-6" />
                     <div className="mb-2 mt-4 text-lg font-medium">
-                      shadcn/ui
+                      SkillRush
                     </div>
                     <p className="text-sm leading-tight text-muted-foreground">
-                      Beautifully designed components built with Radix UI and Tailwind CSS.
+                     Learn and achive greate in life by making your learning fun.
                     </p>
                   </a>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="/docs" title="Introduction">
-                Reusable components built using Radix UI and Tailwind CSS.
-              </ListItem>
-              <ListItem href="/docs/installation" title="Installation">
-                How to install dependencies and structure your app.
-              </ListItem>
-              <ListItem href="/docs/primitives/typography" title="Typography">
-                Styles for headings, paragraphs, lists...etc
-              </ListItem>
+              <ListItem href="/team" title="Meet the Team">
+  Get to know the passionate individuals behind this project.
+</ListItem>
+<ListItem href="/setup" title="Project Setup">
+  Learn how we structured the app and set up the development environment.
+</ListItem>
+<ListItem href="/design" title="Design & Styling">
+  Explore our use of React, Tailwind CSS, and UI/UX design principles.
+</ListItem>
+
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
 
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Components</NavigationMenuTrigger>
+          <NavigationMenuTrigger>Projects</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
               {components.map((component) => (
@@ -102,8 +104,8 @@ export default function NavigationMenuDemo() {
         </NavigationMenuItem>
 
         <NavigationMenuItem>
-          <NavigationMenuLink className={navigationMenuTriggerStyle()} href="/docs">
-            Documentation
+          <NavigationMenuLink className={navigationMenuTriggerStyle()} href="/about">
+            About Us
           </NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>
