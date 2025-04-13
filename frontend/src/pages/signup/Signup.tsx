@@ -213,6 +213,27 @@ export default function SignupPage(){
               )}
             </div>
 
+            <div>
+              <label htmlFor="gender" className="block text-sm font-medium text-gray-700">
+                Gender
+              </label>
+              <div className="mt-1">
+                <select
+                  id="gender"
+                  name="gender"
+                  required
+                  value={formData.gender}
+                  onChange={handleChange}
+                  className="appearance-none block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                >
+                  <option value="" disabled>Select your gender</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+
             <div className="flex items-center">
               <input
                 id="agreeToTerms"

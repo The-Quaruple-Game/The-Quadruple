@@ -1,19 +1,34 @@
-import { useState } from 'react';
+import { useState, FormEvent, ChangeEvent } from 'react';
 import { Link } from 'react-router-dom';
 
-export default function SignupPage() {
-  const [formData, setFormData] = useState({
+// Define interfaces for form data and props
+interface FormData {
+  username: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+  gender: string;
+  dob: string;
+  agreeToTerms: boolean;
+}
+
+export default function SignupPage(){
+  const [formData, setFormData] = useState<FormData>({
     username: '',
     email: '',
     password: '',
     confirmPassword: '',
+    gender: '',
+    dob: '',
     agreeToTerms: false
   });
 
-  const [passwordError, setPasswordError] = useState('');
+  const [passwordError, setPasswordError] = useState<string>('');
 
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>): void => {
+    const { name, value, type } = e.target;
+    const checked = (e.target as HTMLInputElement).checked;
+    
     setFormData(prevData => ({
       ...prevData,
       [name]: type === 'checkbox' ? checked : value
@@ -25,7 +40,7 @@ export default function SignupPage() {
     }
   };
 
-  const validatePasswords = () => {
+  const validatePasswords = (): boolean => {
     if (formData.password !== formData.confirmPassword) {
       setPasswordError("Passwords don't match");
       return false;
@@ -37,15 +52,70 @@ export default function SignupPage() {
     return true;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
-
+    
     if (!validatePasswords()) {
       return;
     }
 
-    // Handle signup logic here
-    console.log('Signup form submitted with:', formData);
+      // Format DOB to yyyy-mm-dd
+  const dob = new Date(formData.dob);
+  const formattedDob = dob.toISOString().split('T')[0]; // 'yyyy-mm-dd'
+
+  const payload = {
+    username: formData.username,
+    email: formData.email,
+    password: formData.password,
+    confirmPassword: formData.confirmPassword,
+    gender: formData.gender,
+    dob: formattedDob,
+    agreeToTerms: formData.agreeToTerms
+  };
+
+  console.log("Sending payload:", payload);
+
+  try {
+    const response = await fetch('http://localhost:8000/api/register/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      alert('Account created successfully!');
+      // Optionally redirect
+    } else {
+      alert(data.detail || 'Signup failed');
+    }
+  } catch (err) {
+    console.error('Signup error', err);
+  }
+    
+    try {
+      const response = await fetch('http://localhost:8000/api/token/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: formData.email,
+          password: formData.password
+        })
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        localStorage.setItem('access', data.access);
+        localStorage.setItem('refresh', data.refresh);
+        // Redirect or show success
+      } else {
+        alert(data.detail || 'Login failed');
+      }
+    } catch (err) {
+      console.error('Login error', err);
+    }
   };
 
   return (
